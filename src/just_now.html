@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Justnow2</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class Justnow extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          now: new Date()
+        };
+      }
+
+      render() {
+        let now = this.state.now;
+        let now_date = [now.getFullYear(), now.getMonth()+1, now.getDate()].join('-');
+        let now_time = [now.getHours(), now.getMinutes(), now.getSeconds()].join(':');
+
+        return <h1>{now_date} {now_time}</h1>;
+      }
+    }
+
+    ReactDOM.render(
+      <Justnow />,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>

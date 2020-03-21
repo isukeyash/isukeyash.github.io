@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header';
+import ToDo from './todo';
 import './App.css';
 
 class App extends Component {
@@ -7,8 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header>
-          React todo
+          React ToDo
         </Header>
+        <ToDo />
       </div>
     )
   }
